@@ -1,0 +1,138 @@
+/* Reset e fonte */
+* {
+  margin: 0; /* Remove margens padrão */
+  padding: 0; /* Remove espaçamentos internos padrão */
+  box-sizing: border-box; /* Faz com que padding e borda não aumentem o tamanho total dos elementos */
+}
+
+html {
+  scroll-behavior: smooth; /* Rolagem suave ao navegar na página */
+}
+
+body {
+  font-family: 'Inter', sans-serif; /* Define a fonte padrão */
+  background-color: #f4f7f9; /* Cor de fundo da página */
+  color: #333; /* Cor do texto padrão */
+  padding: 20px; /* Espaçamento interno do body */
+  display: flex; /* Ativa flexbox */
+  flex-direction: column; /* Elementos em coluna */
+  min-height: 100vh; /* Altura mínima da página igual à altura da tela */
+}
+
+.background {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url('img/ImageFundoPage.png'); /* substitua pelo caminho correto */
+  background-size: cover;
+  background-position: center;
+  filter: blur(5px); /* valor de desfoque */
+  z-index: -1;
+}
+
+header {
+  text-align: center; /* Centraliza o texto */
+  margin-bottom: 2rem; /* Espaçamento abaixo do cabeçalho */
+}
+
+header h1 {
+  font-size: 2.5rem; /* Tamanho grande para o título */
+  font-weight: 800; /* Peso forte da fonte */
+  color: #ffffff; /* Cor */
+  margin-bottom: 0.5rem; /* Espaço entre o título e o parágrafo */
+}
+
+header p {
+  font-size: 1.125rem; /* Tamanho médio do texto */
+  color: #b0b0b0; /* Cor cinza para descrição */
+}
+
+/* Container de Cards */
+.cards-container {
+  display: grid; /* Usa layout em grid */
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Cria colunas flexíveis */
+  gap: 20px; /* Espaço entre os cards */
+  width: 100%; /* Ocupa toda a largura */
+  max-width: 1200px; /* Largura máxima do container */
+  margin: 0 auto; /* Centraliza o container */
+}
+
+/* Card Individual */
+.card {
+  text-align: center;
+  background-color: #ffffff; /* Fundo branco padrão (relevante se imagem não carregar) */
+  background-size: cover; /* Imagem cobre todo o card */
+  background-position: center; /* Centraliza a imagem */
+  border-radius: 1rem; /* Cantos arredondados */
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.05); /* Sombra suave */
+  padding: 1.5rem; /* Espaçamento interno */
+  display: flex; /* Ativa flexbox */
+  flex-direction: column; /* Itens em coluna */
+  justify-content: flex-end; /* Alinha conteúdo no final do card */
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Animação suave */
+  min-height: 250px; /* Altura mínima do card */
+  position: relative; /* Necessário para posicionar elementos internos */
+  overflow: hidden; /* Esconde conteúdos que transbordem */
+}
+
+.card::before {
+  content: ""; /* Cria pseudo-elemento */
+  position: absolute; /* Posicionamento absoluto */
+  inset: 0; /* Ocupa toda a área do card */
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.5), transparent); /* Degradê escuro para facilitar leitura */
+  z-index: 0; /* Fica atrás do conteúdo */
+}
+
+/* Todos os textos e links dentro do card */
+.card h2,
+.card p,
+.card a {
+  
+  margin-bottom: 40px;
+  z-index: 1; /* Fica acima do ::before */
+  position: relative; /* Necessário para z-index funcionar */
+  color: #fff; /* Cor branca do texto */
+}
+
+.card h2 {
+  font-size: 1.25rem; /* Tamanho do título */
+  font-weight: 700; /* Peso médio-forte */
+  margin-bottom: 0.5rem; /* Espaço abaixo do título */
+}
+
+.card p {
+  font-size: 1rem; /* Tamanho do parágrafo */
+  margin-bottom: 1rem; /* Espaço abaixo do parágrafo */
+}
+
+.card a {
+  align-self: flex-start; /* Alinha o botão à esquerda */
+  padding: 0.5rem 1rem; /* Espaçamento interno */
+  background-color: #ffffff; /* Fundo branco */
+  color: #007b5e; /* Cor do texto */
+  border-radius: 0.5rem; /* Cantos arredondados */
+  font-weight: 600; /* Peso do texto */
+  text-decoration: none; /* Remove sublinhado */
+  transition: background-color 0.3s ease, color 0.3s ease; /* Animação de hover */
+}
+
+.card a:hover {
+  background-color: #007b5e; /* Muda fundo ao passar o mouse */
+  color: #fff; /* Muda cor do texto ao passar o mouse */
+}
+
+.card:hover {
+  transform: translateY(-5px); /* Move o card para cima ao passar o mouse */
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.1); /* Aumenta a sombra */
+}
+
+/* Footer */
+footer {
+  margin-top: auto; /* Joga o rodapé para o fim da página */
+  text-align: center; /* Centraliza texto */
+  font-size: 0.9rem; /* Tamanho da fonte menor */
+  color: #c2c2c2; /* Cor cinza clara */
+  padding: 1rem 0; /* Espaço vertical no rodapé */
+}
