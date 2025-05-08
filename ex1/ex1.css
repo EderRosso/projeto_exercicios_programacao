@@ -1,15 +1,77 @@
 /* ex1.css */
+
 body {
+  margin: 0; /* Remove margens padrão do navegador */
+  padding: 0; /* Remove preenchimento interno padrão */
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Define a fonte principal da página */
+  background: url('./ImageParImparDesenho.png') no-repeat center center fixed; /* Aplica uma imagem de fundo centralizada e fixa */
+  background-size: cover; /* Faz com que a imagem de fundo cubra toda a tela */
+  color: #ffffff; /* Define a cor do texto como branco */
+  display: flex; /* Usa Flexbox para organizar os elementos filhos */
+  flex-direction: column; /* Organiza os elementos filhos em coluna */
+  align-items: center; /* Centraliza os itens horizontalmente */
+  justify-content: flex-start; /* Alinha os itens ao topo da tela */
+  min-height: 100vh; /* Garante que o corpo da página tenha no mínimo 100% da altura da janela */
+  padding-top: 30px; /* Adiciona espaço no topo da página */
+}
 
-  font-family: Arial, sans-serif;
-  text-align: center;
-  padding: 20px;
-  background: #f0f0f0;
-
+h1 {
+  font-size: 3rem; /* Define o tamanho da fonte do título principal */
+  margin-bottom: 20px; /* Adiciona espaço abaixo do h1 */
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.5); /* Adiciona sombra ao texto para dar destaque sobre o fundo */
 }
 
 #app {
-  margin-top: 20px;
-  padding: 20px;
-  border-color: black;
+  background-color: rgba(0, 0, 0, 0.6); /* Fundo semitransparente para o conteúdo central */
+  padding: 30px; /* Espaçamento interno do conteúdo */
+  border-radius: 15px; /* Bordas arredondadas */
+  box-shadow: 0 0 15px rgba(0,0,0,0.5); /* Sombra ao redor do bloco para destaque */
+  width: 90%; /* Usa 90% da largura da tela (em telas pequenas) */
+  max-width: 400px; /* Limita a largura máxima a 400px */
+  text-align: center; /* Centraliza o texto no conteúdo */
+}
+
+form {
+  display: flex; /* Usa Flexbox dentro do formulário */
+  flex-direction: column; /* Organiza os inputs verticalmente */
+  gap: 15px; /* Espaço de 15px entre os inputs */
+}
+
+input[type="number"] {
+  padding: 10px; /* Espaçamento interno */
+  font-size: 1rem; /* Tamanho da fonte */
+  border-radius: 10px; /* Bordas arredondadas */
+  border: none; /* Remove bordas padrão */
+  outline: none; /* Remove contorno ao focar */
+}
+
+input[type="submit"] {
+  padding: 10px; /* Espaçamento interno */
+  font-size: 1rem; /* Tamanho da fonte */
+  border-radius: 10px; /* Bordas arredondadas */
+  border: none; /* Remove borda padrão */
+  background-color: #4cafaf; /* Cor de fundo verde */
+  color: white; /* Cor do texto */
+  cursor: pointer; /* Muda o cursor para mãozinha ao passar o mouse */
+  transition: background-color 0.3s ease; /* Animação suave ao mudar a cor de fundo */
+}
+
+input[type="submit"]:hover {
+  background-color: #4563a0; /* Muda o verde ao passar o mouse */
+}
+
+a[href="../index.html"] {
+  margin-top: 30px; /* Espaço acima do botão */
+  padding: 10px 20px; /* Espaçamento interno: cima/baixo e laterais */
+  background-color: #2196F3; /* Cor de fundo azul */
+  color: white; /* Cor do texto */
+  text-decoration: none; /* Remove sublinhado do link */
+  border-radius: 10px; /* Bordas arredondadas */
+  font-weight: bold; /* Deixa o texto em negrito */
+  transition: background-color 0.3s ease; /* Transição suave na mudança de cor */
+  display: inline-block; /* Faz com que o botão respeite padding e margin */
+}
+
+a[href="../index.html"]:hover {
+  background-color: #0b7dda; /* Cor de fundo azul mais escura ao passar o mouse */
 }
